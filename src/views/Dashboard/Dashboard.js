@@ -13,7 +13,6 @@ class Dasboard extends Component {
                             <ol className="breadcrumb">
                                 <li className="breadcrumb-item active">Welcome to Dashboard</li>
                             </ol>
-
                         </div>
                         <div className="col-sm-6">
 

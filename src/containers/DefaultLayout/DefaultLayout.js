@@ -9,15 +9,12 @@ import { Container } from "reactstrap";
 import { isLarge } from "../../store/actions";
 // routes config
 import routes from "../../routes";
-import PerfectScrollbar from 'react-perfect-scrollbar'
-import 'react-perfect-scrollbar/dist/css/styles.css';
-
+import PerfectScrollbar from "react-perfect-scrollbar";
+import "react-perfect-scrollbar/dist/css/styles.css";
 
 const DefaultAside = React.lazy(() => import("./DefaultAside"));
 const DefaultFooter = React.lazy(() => import("./DefaultFooter"));
 const DefaultHeader = React.lazy(() => import("./DefaultHeader"));
-
-
 
 class DefaultLayout extends Component {
   constructor(props) {
@@ -43,14 +40,13 @@ class DefaultLayout extends Component {
 
         <Suspense fallback={this.loading()}>
           <div className="left side-menu">
-            {this.props.is_large_state ?
+            {this.props.is_large_state ? (
               <DefaultAside />
-              :
+            ) : (
               <PerfectScrollbar>
                 <DefaultAside />
               </PerfectScrollbar>
-            }
-
+            )}
           </div>
         </Suspense>
 
@@ -64,11 +60,11 @@ class DefaultLayout extends Component {
                     path={route.path}
                     exact={route.exact}
                     name={route.name}
-                    render={props => (
-                      <route.component {...props} />
-                    )} />
-                ) : (null);
+                    render={props => <route.component {...props} />}
+                  />
+                ) : null;
               })}
+              <Redirect from="/" to="/dashboard" />
             </Switch>
             {this.props.children}
           </div>

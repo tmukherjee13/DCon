@@ -3,7 +3,7 @@ import { Alert, Button, Card, Row, Col } from 'reactstrap';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 // import { registerUser, emptyError } from '../store/actions';
-import logosm from '../images/logo-sm.png';
+import logosm from '../../images/logo-sm.png';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
 
 class Register extends Component {

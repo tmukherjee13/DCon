@@ -27,12 +27,17 @@ const DefaultLayout = Loadable({
 
 // Pages
 const Login = Loadable({
-  loader: () => import("./views/Login"),
+  loader: () => import("./views/Auth/Login"),
   loading
 });
 
 const Register = Loadable({
-  loader: () => import("./views/Register"),
+  loader: () => import("./views/Auth/Register"),
+  loading
+});
+
+const Page404 = Loadable({
+  loader: () => import("./views/Page/404"),
   loading
 });
 
@@ -52,9 +57,11 @@ class App extends Component {
           name="Register Page"
           component={Register}
         />
-        {/*<Route exact path="/404" name="Page 404" component={Page404}/>*/}
+        <Route exact path="/404" name="Page 404" component={Page404} />
         {/*<Route exact path="/500" name="Page 500" component={Page500}/>*/}
         <Route path="/" name="Home" component={DefaultLayout} />
+
+        <Redirect to="/404" />
       </Switch>
     );
   }

@@ -1,4 +1,4 @@
-import Dashboard from "./views/Dashboard";
+import Dashboard from "./views/Dashboard/Dashboard";
 
 // import BlankPage from './pages/ExtraPages/pages-blank';
 

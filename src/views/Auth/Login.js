@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Alert, Button, Col, Row, Card } from "reactstrap";
 import { Link, withRouter } from "react-router-dom";
 import { AvForm, AvField } from "availity-reactstrap-validation";
-import logosm from "../images/logo-sm.png";
+import logosm from "../../images/logo-sm.png";
 import { connect } from "react-redux";
-import { checkLogin } from "../store/actions";
+import { checkLogin } from "../../store/actions";
 
 class Login extends Component {
   constructor(props) {
